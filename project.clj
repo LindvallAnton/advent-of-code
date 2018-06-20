@@ -2,4 +2,5 @@
   :description "Repo for advent of code 2017 solutions"
   :license {:name "MIT License"
             :url "https://opensource.org/licenses/MIT"}
-  :dependencies [[org.clojure/clojure "1.8.0"]])
+  :dependencies [[org.clojure/clojure "1.8.0"]
+                 [ysera "1.0.3"]])
