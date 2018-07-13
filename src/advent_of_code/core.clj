@@ -7,7 +7,7 @@
 ;----------
 
 (defn sum-conseq-digit-str [digstr sum first-digit]
-   (println digstr sum first-digit)
+  ; (println digstr sum first-digit)
    (if (= 0 (count (next digstr)))
      (+ sum (if (=(bigint digstr) first-digit) first-digit 0))
      (sum-conseq-digit-str (subs digstr 1) (+ sum (if (= (first digstr) (fnext digstr))(bigint (subs digstr 0 1))0)) first-digit)))
@@ -52,3 +52,16 @@
  ; 5 1 9 5
  ; 7 5 3
  ; 2 4 6 8
+
+(defn advent-of-code-2017-12-02
+  {:test (fn []
+           (is= 18 (advent-of-code-2017-12-02 [[5 1 9 5]
+                                               [7 5 3]
+                                               [2 4 6 8]])))}
+  [input-data]
+  (reduce
+    (fn [a v]
+      (+ a (- (reduce max v) (reduce min v))))
+      0
+      input-data)
+  )
